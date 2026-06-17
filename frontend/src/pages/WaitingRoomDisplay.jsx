@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import io from 'socket.io-client';
 
-const API_BASE_URL = 'http://localhost:5000/api';
-const socket = io('http://localhost:5000');
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:5000';
+const API_BASE_URL = `${BACKEND_URL}/api`;
+const socket = io(BACKEND_URL);
 
 function WaitingRoomDisplay() {
   const [settings, setSettings] = useState({ currentServingToken: 0, averageConsultationTime: 5 });
