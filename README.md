@@ -51,3 +51,15 @@ This application is designed to be deployed instantly on Vercel:
 4. Click **Deploy**.
 
 *(Note: The old Node.js/MongoDB backend has been completely removed in favor of Supabase's serverless architecture, meaning you only need to deploy the frontend directory).*
+
+## 👨‍💻 Author
+
+**Devesh Kumar TS**  
+B.E CSE (Cyber Security)  
+Chennai Institute of Technology (CIT'28)
+
+## 📜 License
+
+This project is intended for educational and research purposes only.
+
+Use responsibly and only on systems you own or are authorized to test.
