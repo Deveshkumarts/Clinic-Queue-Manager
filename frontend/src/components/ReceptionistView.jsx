@@ -176,6 +176,21 @@ function ReceptionistView({ state }) {
             <h3 style={{ marginBottom: '1.5rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
               Waiting ({waitingTokens.length})
             </h3>
+            {waitingTokens.length > 0 ? (
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                {waitingTokens.map(token => (
+                  <div key={token.id} style={{ display: 'flex', justifyContent: 'space-between', padding: '0.75rem', background: 'var(--bg-color)', borderRadius: '0.5rem', border: '1px solid var(--border-color)' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                      <span style={{ fontWeight: 'bold', fontSize: '1.1rem', color: 'var(--primary-color)' }}>#{token.token_number}</span>
+                      <span>{token.patient_name}</span>
+                      {token.is_emergency && <span style={{ color: '#ef4444', fontSize: '0.8rem', fontWeight: 'bold', padding: '0.1rem 0.4rem', background: 'rgba(239, 68, 68, 0.1)', borderRadius: '0.25rem' }}>EMERGENCY</span>}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <p style={{ color: 'var(--text-muted)', textAlign: 'center', padding: '1rem' }}>No patients waiting</p>
+            )}
           </div>
         </div>
       </div>
